@@ -7,6 +7,7 @@ import userRoute from "./routes/AuthRoute.js";
 import contactRoute from "./routes/ContactRoute.js";
 import setupSocket from "./socket.js";
 import messageRoute from "./routes/MessageRoute.js";
+import channelRoute from "./routes/ChannelRoute.js";
 
 // import { verifytoken } from "./middleware/AuthMiddleware.js";
 
@@ -21,6 +22,8 @@ app.use(cors({
     credentials:true,
 }));
 
+app.use("/uploads/files",express.static("uploads/files"));
+
 app.use(cookieParser());
 app.use(express.json());
 
@@ -34,6 +37,7 @@ const port = 3000;
 app.use("/api/auth",userRoute);
 app.use("/api/contact",contactRoute);
 app.use("/api/messages",messageRoute);
+app.use("/api/channel",channelRoute);
 
 
 const server = app.listen(port,()=>{

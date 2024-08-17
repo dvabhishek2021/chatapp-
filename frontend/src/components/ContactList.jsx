@@ -23,14 +23,14 @@ const ContactList = ({contacts,ischannel = false}) => {
       {
         contacts.map((contact) =>(
             <div key={contact._id} className={`pl-10 py-2 transition-all duration-300 cursor-pointer ${selectedChatData && selectedChatData._id === contact._id?
-                 "bg-[#8417ff] hover:bg-[rgb(132,23,255)]":"hover:bg-[#383737] rounded-full"}`} onClick={()=>handleClick(contact)}>
+                 "bg-[#8e52d2] hover:bg-[rgb(132,23,255)]":"hover:bg-[#383737] rounded-full"}`} onClick={()=>handleClick(contact)}>
                     <div className='flex gap-5 items-center  text-neutral-300'>
                         {
                             !ischannel && (<Avatar className="h-10 w-10 rounded-full overflow-hidden">
                             {
-                              contact.image ? (<AvatarImage src={image} alt="profile" className="object-cover w-full h-full bg-black" />) : (
+                              contact.image ? (<AvatarImage src={image} alt="profile" className="object-cover w-full h-full bg-[black]" />) : (
                                 <div className={`
-                                    ${selectedChatData && selectedChatData._id === contact._id ? "bg-[#0033ff] text-white border-white": getColor(contact.color)}
+                                    ${selectedChatData && selectedChatData._id === contact._id ? "bg-[#0033ff] text-black border-white": getColor(contact.color)}
                                 uppercase h-10 w-10 text-3xl border-[1px] flex  items-center justify-center rounded-full `}>
                                   {contact.firstName ? contact.firstName.split("").shift() : contact.email.split("").shift()}
                                 </div>
@@ -39,7 +39,7 @@ const ContactList = ({contacts,ischannel = false}) => {
                           </Avatar>
                         )}
                         {
-                            ischannel && <div className='bg-[#ffffff22] h-10 w-10 flex items-center justify-center rounded-full'>#</div>}
+                            ischannel && <div className='bg-[#ffffff22] h-10 w-10 flex items-center justify-center rounded-full'>N</div>}
                             {
                                 ischannel ? <span>{contact.name}</span> : <span>{`${contact.firstName} ${contact.lastName}`}</span>
                             }

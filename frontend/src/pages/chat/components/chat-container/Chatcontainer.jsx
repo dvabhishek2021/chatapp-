@@ -6,7 +6,7 @@ import Messagebar from './components/message-bar/Messagebar'
 
 const Chatcontainer = () => {
   return (
-    <div className='fixed top-0 h-[100vh] w=[100vw] bg-[#1c1d25] flex flex-col md:static md:flex-1'>
+    <div className='fixed top-0 h-[100vh] w=[100vw] bg-[#e3e0e0] flex flex-col md:static md:flex-1'>
       <Chathead />
       <Message />
       <Messagebar />
@@ -15,3 +15,6 @@ const Chatcontainer = () => {
 }
 
 export default Chatcontainer
+
+
+//[#1c1d25] line 9 bg
